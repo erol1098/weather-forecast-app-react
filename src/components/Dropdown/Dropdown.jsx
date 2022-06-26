@@ -1,7 +1,10 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import WeatherContext from "../../context/DataContext";
 
 const Dropdown = () => {
+  const { setSelectedCity } = useContext(WeatherContext);
+
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
@@ -16,9 +19,19 @@ const Dropdown = () => {
     );
   }, []);
 
+  const selectedCityHandler = (e) => {
+    setSelectedCity(e.target.value);
+  };
+
   return (
     <form>
-      <select name="cities" id="cities">
+      <select
+        onChange={selectedCityHandler}
+        name="cities"
+        id="cities"
+        autoFocus
+      >
+        <option value={null}>Select A City</option>
         {cities.map((city, index) => (
           <option key={index + 1} value={city}>
             {city}

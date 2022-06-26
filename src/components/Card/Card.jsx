@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import DataContext from "../../context/DataContext";
+
+import WeatherContext from "../../context/DataContext";
 const Card = () => {
-  const { weatherData } = useContext(DataContext);
-  return <div>{weatherData}</div>;
+  const { weatherData, selectedCity } = useContext(WeatherContext);
+  return <div>{selectedCity}</div>;
 };
 
 export default Card;

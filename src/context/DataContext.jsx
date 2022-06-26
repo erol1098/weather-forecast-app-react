@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
 const WeatherContext = createContext();
 
@@ -7,15 +8,15 @@ export const WeatherProvider = (props) => {
   const [selectedCity, setSelectedCity] = useState("İzmir");
 
   const values = {
-    weatherData: weatherData,
-    setWeatherData: setWeatherData,
-    selectedCity: selectedCity,
-    setSelectedCity: setSelectedCity,
+    weatherData,
+    selectedCity,
+    setSelectedCity,
+    setWeatherData,
   };
 
-  // useEffect(() => {
-  //   console.log("object");
-  // }, []);
+  useEffect(() => {
+    // axios();
+  }, [selectedCity]);
 
   return (
     <WeatherContext.Provider value={values}>
