@@ -1,5 +1,7 @@
 import React from "react";
 import Container from "./components/Container/Container";
+import "./App.module.css";
+
 import Dropdown from "./components/Dropdown/Dropdown";
 import Header from "./components/Header/Header";
 import { WeatherProvider } from "./context/DataContext";
