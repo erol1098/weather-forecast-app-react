@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import WeatherContext from "../../context/DataContext";
-
+import styles from "./Dropdown.module.css";
 const Dropdown = () => {
-  const { setSelectedCity } = useContext(WeatherContext);
+  const { selectedCity, setSelectedCity } = useContext(WeatherContext);
 
   const [cities, setCities] = useState([]);
 
@@ -24,14 +24,15 @@ const Dropdown = () => {
   };
 
   return (
-    <form>
+    <form className={styles.form}>
       <select
+        className={styles.select}
         onChange={selectedCityHandler}
         name="cities"
         id="cities"
         autoFocus
+        value={selectedCity}
       >
-        <option value={null}>Select A City</option>
         {cities.map((city, index) => (
           <option key={index + 1} value={city}>
             {city}

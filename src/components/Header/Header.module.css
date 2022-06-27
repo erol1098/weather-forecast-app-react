@@ -1,0 +1,8 @@
+.header {
+  background-color: goldenrod;
+  padding: 0.5rem 0.2rem;
+}
+.header h1 {
+  color: #fff;
+  text-align: center;
+}
