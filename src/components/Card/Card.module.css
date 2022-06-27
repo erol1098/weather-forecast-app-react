@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .max {
   color: #777;
@@ -20,6 +21,5 @@
 }
 .degrees {
   display: flex;
-  /* justify-content: space-between; */
   gap: 1rem;
 }
