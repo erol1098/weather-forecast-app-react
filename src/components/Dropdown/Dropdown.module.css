@@ -1,6 +1,6 @@
 .form {
   padding: 1.7rem;
-  background-color: #eee;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .select {
   font-size: 1.1rem;

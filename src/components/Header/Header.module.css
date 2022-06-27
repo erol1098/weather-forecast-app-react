@@ -5,4 +5,5 @@
   background-position: center;
   background-size: cover;
   height: 160px;
+  border-bottom: 0.4rem solid grey;
 }
