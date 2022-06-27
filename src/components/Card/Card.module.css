@@ -1,0 +1,25 @@
+.card {
+  max-width: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.max {
+  color: #777;
+  font-weight: bold;
+  display: inline-block;
+}
+.min {
+  color: #aaa;
+  display: inline-block;
+}
+.date {
+  color: #abc;
+}
+.degrees {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 1rem;
+}

@@ -4,7 +4,12 @@ import axios from "axios";
 const WeatherContext = createContext();
 
 export const WeatherProvider = (props) => {
-  const [weatherData, setWeatherData] = useState("test data");
+  const [weatherData, setWeatherData] = useState({
+    max_temp: "",
+    min_temp: "",
+    datetime: "",
+    weather: { icon: "" },
+  });
   const [selectedCity, setSelectedCity] = useState("İzmir");
 
   const values = {
@@ -15,7 +20,11 @@ export const WeatherProvider = (props) => {
   };
 
   useEffect(() => {
-    // axios();
+    axios(
+      `https://api.weatherbit.io/v2.0/forecast/daily?city=${selectedCity}&lang=en&units=M&days=1&key=${process.env.REACT_APP_API_KEY}`
+    )
+      .then((res) => setWeatherData(res.data.data[0]))
+      .catch((err) => console.log(err));
   }, [selectedCity]);
 
   return (
